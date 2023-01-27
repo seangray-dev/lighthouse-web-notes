@@ -1,5 +1,7 @@
 ## Challenge
 
+- Implement `without` which will return a subset of a given array, removing unwanted elements.
+
 ## Solution
 
 ```javascript
