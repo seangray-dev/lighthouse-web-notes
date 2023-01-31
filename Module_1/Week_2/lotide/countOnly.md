@@ -2,7 +2,7 @@
 
 - `countOnly` will be given an array and an object. It will return an object containing counts of everything that the input object listed.
 
-![countOnly](./images/lotide-objects-countOnly.png)
+![countOnly](../images/lotide-objects-countOnly.png)
 
 ## Solution
 
