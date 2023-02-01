@@ -47,7 +47,7 @@ const actionWhenFound2 = function (index) {
   // -> Found Waldo at index 2!
 };
 
-findWaldo(["Alice", "Bob", "Waldo", "Winston"], actionWhenFound);
+findWaldo2(["Alice", "Bob", "Waldo", "Winston"], actionWhenFound2);
 // -> undefined
 ```
 
