@@ -24,6 +24,7 @@ const findWaldo = function (names, found) {
 
 const actionWhenFound = function (index) {
   console.log(`Found Waldo at index ${index}!`);
+  // -> Found Waldo at index 2!
 };
 
 findWaldo(["Alice", "Bob", "Waldo", "Winston"], actionWhenFound);
@@ -43,6 +44,7 @@ const findWaldo2 = function (names, found) {
 
 const actionWhenFound2 = function (index) {
   console.log(`Found Waldo at index ${index}!`);
+  // -> Found Waldo at index 2!
 };
 
 findWaldo(["Alice", "Bob", "Waldo", "Winston"], actionWhenFound);
