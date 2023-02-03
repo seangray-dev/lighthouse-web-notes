@@ -131,7 +131,7 @@ const calculateDayNumber = function (month, day) {
 };
 ```
 
-- `daysInFeb` always returned `28` and never utilized the function check for `isLeapYear`. Therefore we need to change this to returnining `29` if the `isLeapYear` is `true` and `28` otherwise.
+- `daysInFeb` always returned `28` and never utilized the function check for `isLeapYear`. Therefore we need to change this to returning `29` if the `isLeapYear` is `true` and `28` otherwise.
 
 ```javascript
 const daysInFeb = function (year) {
