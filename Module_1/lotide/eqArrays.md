@@ -1,54 +1,44 @@
 ## Challenge
 
 - Implement a function eqArrays which takes in two arrays and returns true or false, based on a perfect match.
-- Use `assertEqual` to write test cases for various scenarios.
 
 ## Solution
 
 ```javascript
-const assertEqual = function (actual, expected) {
-  if (actual === expected) {
-    return `✅ Assertion Passed: [${actual}] === [${expected}]`;
-  } else {
-    return `🛑 Assertion Failed: [${actual}] !== [${expected}]`;
-  }
-};
-
-const eqArrays = function (actual, expected) {
-  if (actual.length !== expected.length) {
+const eqArrays = function (arr1, arr2) {
+  if (!Array.isArray(arr1) || !Array.isArray(arr2)) {
     return false;
-  } else {
-    for (let i = 0; i < actual.length; i++) {
-      if (actual[i] !== expected[i]) {
+  }
+  if (arr1.length !== arr2.length) {
+    return false;
+  }
+
+  for (let i = 0; i < arr1.length; i++) {
+    if (Array.isArray(arr1[i]) && Array.isArray(arr2[i])) {
+      if (!eqArrays(arr1[i], arr2[i])) {
         return false;
       }
+    } else if (arr1[i] !== arr2[i]) {
+      return false;
     }
-    return true;
   }
+  return true;
 };
 ```
 
 ## Explanation
 
-- The `eqArrays` function compares 2 arrays and returns `true` if they are equal, and `false` if they are not. It takes in 2 arguments: `actual` & `expected` which are the arrays to be compared.
-- First the functions checks if the lengths of the 2 arrays are equal, and if they are not it immediately returns `false`.
-- If they are equal, the `actual` array enters a for loop that iterates through each element of the array.
-- For each iteration, it checks if the current element of the `actual` array is equal to the corresponding element of the `expected` array.
-- If any of these comparisons are not equal, the function immediately returns `false`.
-- If the loop completes without finding any mismatches, the function returns `true` letting us know that the 2 arrays are identical.
+- `eqArrays` is used to compare two arrays and return true if they have the same values in the same order, it takes in two parameters `arr1` and `arr2`.
+- We first check if either inputs are not arrays, and if they aren't we return `false`.
+- We then check if the arrays have the same length, if they do not we return `false`.
+- If the arrays are the same length, we then loop through eah item in `arr1` and for each item in the array we check if both `arr1[i]` and `arr2[i]` are arrays, we use recursion to call `eqArrays` again with the sub-arrays as arguments. If the the nested arrays aren't equal we return `false`.
+- If `arr1[i]` and `arr2[i]` are not both arrays anf aren't equal to one another, we return `false`.
+- If all checks pass, we return `true`.
 
 ## Test Cases
 
 ```javascript
-eqArrays([1, 2, 3], [1, 2, 3]);
-// output: true
-
-eqArrays(["1", "2", "3"], ["1", "2", 3]);
-// output: false
-
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
-// output: ✅ Assertion Passed: [true] === [true]
-
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false);
-// output: ✅ Assertion Passed: [false] === [false]
+eqArrays([[2, 3], [4]], [[2, 3], [4]]) // => true
+eqArrays([[2, 3], [4]], [[2, 3], [4, 5]) // => false
+eqArrays([[2, 3], [4]], [[2, 3], 4]) // => false
 ```
