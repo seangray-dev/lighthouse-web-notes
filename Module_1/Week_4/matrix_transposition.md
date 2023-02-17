@@ -81,7 +81,8 @@ const transpose = function (matrix) {
   return matrix[0].map((_, i) => matrix.map((row) => row[i]));
 };
 ```
+
 - The function calls `map` on the first row of the input matrix `matrix[0]`, this will return a new array of the same length as the original array, where every element is the result of calling the provided callback function on each element of the original array. In this case, the callback function takes 2 arguments: the current element (ignored with `_` placeholder) and the index of the current element `i`.
-- For each index `i` of the first row, the callback function mpas the elements of each row in the input matrix using another `map` method. This also returns a new array of the same length of the original array. In this case, the provided function takes only one argument of `row` being the current row. 
-- For each `row`, the callback function returns the element of `row` at index `i` corresponding to the element at row `i` and column `j` which results in the array containing elements of the first column. 
-- The `map` method being used on the input matrix `matrix[0]` returns an array of arrays, where each array corresponds to a column of the input matrix.  
+- For each index `i` of the first row, the callback function mpas the elements of each row in the input matrix using another `map` method. This also returns a new array of the same length of the original array. In this case, the provided function takes only one argument of `row` being the current row.
+- For each `row`, the callback function returns the element of `row` at index `i` corresponding to the element at row `i` and column `j` which results in the array containing elements of the first column.
+- The `map` method being used on the input matrix `matrix[0]` returns an array of arrays, where each array corresponds to a column of the input matrix
