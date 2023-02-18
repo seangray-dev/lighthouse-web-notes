@@ -12,3 +12,5 @@ This repository contains all of the notes taken by [Sean Gray](https://github.co
   - [Week 2](/Module_1/Week_2)
   - [Week 3](/Module_1/Week_3)
   - [Week 4](/Module_1/Week_4)
+- [Module 2](/Module_2)
+  - [Week 5](/Module_2/Week_5)
